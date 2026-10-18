@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deya: політика конфіденційності · Privacy policy</title>
+<style>
+  :root { --bg: #ffffff; --text: #1d2430; --muted: #5b6575; --line: #dde2ea; --accent: #2f6fd6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12161d; --text: #e6e9ef; --muted: #9aa3b2; --line: #2a313c; --accent: #7aa7f0; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  h2 { font-size: 1.15rem; margin: 28px 0 6px; }
+  p, li { margin: 6px 0; }
+  .muted { color: var(--muted); }
+  nav a, a { color: var(--accent); }
+  nav { margin: 8px 0 24px; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
+</style>
+</head>
+<body>
+<main>
+
+<nav><a href="#uk">Українська</a> · <a href="#en">English</a></nav>
+
+<section id="uk" lang="uk">
+<h1>Дея: політика конфіденційності</h1>
+<p class="muted">Чинна з 18 жовтня 2026 року</p>
+
+<p>Дея — навігатор для водіїв, який визначає ваше місце на карті навіть тоді, коли сигнал GPS
+глушать або підмінюють. Уся робота відбувається на вашому телефоні. У застосунку немає облікових
+записів, реклами, аналітики чи звітів про збої, і він не надсилає ваших даних нікуди: ні нам,
+ні будь-кому іншому.</p>
+
+<h2>Місцезнаходження</h2>
+<p>Дея використовує GPS і датчики руху телефона (гіроскоп, акселерометр), щоб визначати, де ви
+їдете, і вести вас маршрутом. Під час поїздки це триває у фоновому режимі, і тоді телефон показує
+сповіщення. Ваше місцезнаходження обробляється тільки на телефоні й ніколи не надсилається.</p>
+
+<h2>Камера</h2>
+<p>Камера потрібна, щоб вимірювати швидкість за дорогою, коли GPS ненадійний. Кадри з камери
+аналізуються в пам'яті телефона й одразу відкидаються. Застосунок не надсилає жодних фото чи відео
+і не зберігає їх, якщо ви самі не ввімкнете запис поїздок (див. нижче).</p>
+
+<h2>Інтернет: тільки карти міст</h2>
+<p>Карта Вінниці вже є в застосунку. Інтернет потрібен лише тоді, коли ви обираєте інше місто:
+телефон завантажує дороги з OpenStreetMap через сервери Overpass API (overpass-api.de,
+overpass.kumi.systems) і фон карти з Protomaps (build.protomaps.com). Ці сервери бачать вашу
+IP-адресу та межі міста, яке ви завантажуєте, але не ваше місцезнаходження. На них поширюються
+їхні власні правила. Визначення місця й навігація працюють без інтернету.</p>
+
+<h2>Що зберігається на телефоні</h2>
+<ul>
+  <li>Налаштування та завантажені карти міст.</li>
+  <li>Короткий підсумок кожної поїздки: час початку й кінця, відстань, скільки часу GPS був
+      недоступний або підмінений, місто, версія застосунку, модель телефона, а також ваша відповідь
+      на питання «Як пройшла поїздка?», якщо ви відповіли. Маршрут чи координати в підсумок не входять.</li>
+  <li>Запис поїздок, тільки якщо ви ввімкнете його в налаштуваннях (за замовчуванням вимкнено):
+      журнал датчиків разом із позиціями GPS і фото дороги приблизно кожні 10 метрів. Окреме
+      налаштування додає кадри з камери для перевірки виміряної швидкості.</li>
+</ul>
+<p>Ці дані не потрапляють у резервні копії в хмарі й не переносяться на інший пристрій.</p>
+
+<h2>Коли дані залишають телефон</h2>
+<p>Тільки тоді, коли ви самі натискаєте «Поділитися поїздкою» або «Поділитися записами». Тоді
+відкривається стандартне меню Android, і ви обираєте, куди надіслати файли (наприклад, у месенджер
+чи пошту). Поїздка надсилається як підсумок і, якщо вона записувалась, журнал датчиків із позиціями
+GPS. Записи надсилаються як журнали датчиків і, якщо ви це вмикали, кадри з камери для перевірки швидкості. Далі ці файли обробляє той застосунок або людина, яким ви їх надіслали.</p>
+
+<h2>Голосові підказки</h2>
+<p>Підказки озвучує синтезатор мовлення, встановлений на вашому телефоні (зазвичай від Google або
+виробника телефона). Він отримує лише текст підказки, наприклад назву вулиці, і працює за власними
+правилами.</p>
+
+<h2>Видалення даних</h2>
+<p>Записані поїздки можна видалити в налаштуваннях («Видалити записи»). Усе інше, разом
+із підсумками поїздок і картами, видаляється, коли ви очищаєте дані застосунку в налаштуваннях
+Android або видаляєте застосунок. У нас немає копії ваших даних, тому видаляти щось на нашому боці
+не потрібно.</p>
+
+<h2>Діти</h2>
+<p>Застосунок призначений для водіїв і не орієнтований на дітей.</p>
+
+<h2>Зміни</h2>
+<p>Якщо ця політика зміниться, нова версія з'явиться на цій сторінці з новою датою.</p>
+
+<h2>Контакти</h2>
+<p>Питання щодо конфіденційності: <a href="mailto:sluisarchuk@gmail.com">sluisarchuk@gmail.com</a>.</p>
+</section>
+
+<hr>
+
+<section id="en" lang="en">
+<h1>Deya: privacy policy</h1>
+<p class="muted">Effective 18 October 2026</p>
+
+<p>Deya is a navigation app for drivers that keeps track of where you are even when GPS is jammed
+or spoofed. All of its work happens on your phone. It has no accounts, ads, analytics or crash
+reporting, and it does not send your data anywhere, to us or to anyone else.</p>
+
+<h2>Location</h2>
+<p>Deya uses GPS and the phone's motion sensors (gyroscope, accelerometer) to work out where you
+are driving and to guide you along a route. During a drive this continues in the background, and
+the phone shows a notification while it does. Your location is processed only on the phone and is
+never sent.</p>
+
+<h2>Camera</h2>
+<p>The camera is used to measure speed from the road when GPS can't be trusted. Camera frames are
+analysed in the phone's memory and discarded straight away. The app sends no photos or videos and
+does not store them unless you turn on drive recording yourself (see below).</p>
+
+<h2>Internet: city maps only</h2>
+<p>The Vinnytsia map comes with the app. The internet is used only when you pick another city:
+the phone downloads its roads from OpenStreetMap through the Overpass API servers
+(overpass-api.de, overpass.kumi.systems) and its background map from Protomaps
+(build.protomaps.com). These servers see your IP address and the boundaries of the city you are
+downloading, not your location, and their own policies apply. Positioning and navigation work
+without the internet.</p>
+
+<h2>What is stored on the phone</h2>
+<ul>
+  <li>Your settings and the city maps you downloaded.</li>
+  <li>A short summary of each drive: start and end time, distance, how long GPS was unavailable or
+      spoofed, the city, the app version, the phone model, and your answer to "How did the ride go?" if
+      you gave one. The summary does not include your route or coordinates.</li>
+  <li>Drive recordings, only if you turn them on in Settings (off by default): a sensor log
+      including GPS positions, and a photo of the road about every 10 metres. A separate setting
+      adds camera frames for checking the measured speed.</li>
+</ul>
+<p>This data is excluded from cloud backups and from transfers to a new device.</p>
+
+<h2>When data leaves the phone</h2>
+<p>Only when you tap "Share ride" or "Share recorded drives". Android's share menu opens and
+you choose where the files go (for example a messenger or email). A shared drive is its summary
+and, if it was recorded, the sensor log with GPS positions. Recorded drives are their sensor logs and, if you turned it on, the camera frames for speed checks. From then on the app or person you sent
+them to handles those files.</p>
+
+<h2>Voice guidance</h2>
+<p>Spoken directions use the text-to-speech engine installed on your phone (usually from Google or
+the phone maker). It receives only the text of each direction, such as a street name, and works
+under its own terms.</p>
+
+<h2>Deleting your data</h2>
+<p>Recorded drives can be deleted in Settings ("Delete recorded drives"). Everything else,
+including drive summaries and maps, is removed when you clear the app's data in Android settings
+or uninstall the app. We hold no copy of your data, so there is nothing to delete on our side.</p>
+
+<h2>Children</h2>
+<p>The app is meant for drivers and is not directed at children.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version will appear on this page with a new date.</p>
+
+<h2>Contact</h2>
+<p>Privacy questions: <a href="mailto:sluisarchuk@gmail.com">sluisarchuk@gmail.com</a>.</p>
+</section>
+</main>
+</body>
+</html>
