@@ -28,24 +28,26 @@
 
 <section id="uk" lang="uk">
 <h1>Дея: політика конфіденційності</h1>
-<p class="muted">Чинна з 18 жовтня 2026 року</p>
+<p class="muted">Чинна з 24 жовтня 2026 року</p>
 
 <p>Дея — навігатор для водіїв, який визначає ваше місце на карті навіть тоді, коли сигнал GPS
 глушать або підмінюють. Уся робота відбувається на вашому телефоні. У застосунку немає облікових
-записів, реклами, аналітики чи звітів про збої, і він не надсилає ваших даних нікуди: ні нам,
-ні будь-кому іншому.</p>
+записів, реклами, аналітики чи звітів про збої. Він не надсилає ваших даних нікуди, якщо ви
+самі не поділитеся поїздкою або не ввімкнете автоматичне надсилання поїздок (див. нижче).</p>
 
 <h2>Місцезнаходження</h2>
 <p>Дея використовує GPS і датчики руху телефона (гіроскоп, акселерометр), щоб визначати, де ви
 їдете, і вести вас маршрутом. Під час поїздки це триває у фоновому режимі, і тоді телефон показує
-сповіщення. Ваше місцезнаходження обробляється тільки на телефоні й ніколи не надсилається.</p>
+сповіщення. Ваше місцезнаходження обробляється на телефоні. Воно залишає телефон тільки у
+журналі датчиків поїздки, якою ви поділилися або яку надіслано автоматично за вашою згодою.</p>
 
 <h2>Камера</h2>
 <p>Камера потрібна, щоб вимірювати швидкість за дорогою, коли GPS ненадійний. Кадри з камери
-аналізуються в пам'яті телефона й одразу відкидаються. Застосунок не надсилає жодних фото чи відео
-і не зберігає їх, якщо ви самі не ввімкнете запис поїздок (див. нижче).</p>
+аналізуються в пам'яті телефона й одразу відкидаються. Застосунок не зберігає їх, якщо ви самі не
+ввімкнете запис поїздок (див. нижче), і ніколи сам не надсилає жодних фото чи відео, навіть коли
+ввімкнено автоматичне надсилання поїздок.</p>
 
-<h2>Інтернет: тільки карти міст</h2>
+<h2>Інтернет: карти міст</h2>
 <p>Карта Вінниці вже є в застосунку. Інтернет потрібен лише тоді, коли ви обираєте інше місто:
 телефон завантажує дороги з OpenStreetMap через сервери Overpass API (overpass-api.de,
 overpass.kumi.systems) і фон карти з Protomaps (build.protomaps.com). Ці сервери бачать вашу
@@ -65,10 +67,25 @@ IP-адресу та межі міста, яке ви завантажуєте, 
 <p>Ці дані не потрапляють у резервні копії в хмарі й не переносяться на інший пристрій.</p>
 
 <h2>Коли дані залишають телефон</h2>
-<p>Тільки тоді, коли ви самі натискаєте «Поділитися поїздкою» або «Поділитися записами». Тоді
+<p>Коли ви самі натискаєте «Поділитися поїздкою» або «Поділитися записами». Тоді
 відкривається стандартне меню Android, і ви обираєте, куди надіслати файли (наприклад, у месенджер
 чи пошту). Поїздка надсилається як підсумок і, якщо вона записувалась, журнал датчиків із позиціями
 GPS. Записи надсилаються як журнали датчиків і, якщо ви це вмикали, кадри з камери для перевірки швидкості. Далі ці файли обробляє той застосунок або людина, яким ви їх надіслали.</p>
+
+<h2>Автоматичне надсилання поїздок (за вашою згодою)</h2>
+<p>Це налаштування за замовчуванням вимкнено. Застосунок один раз пропонує його після поїздки, і
+його можна ввімкнути чи вимкнути в налаштуваннях. Якщо ви його ввімкнете, після кожної наступної
+поїздки (коли ви відповісте на питання про неї) телефон через Wi-Fi надсилає розробнику Деї:</p>
+<ul>
+<li>підсумок поїздки й вашу відповідь (те саме, що описано вище, без координат);</li>
+<li>журнал датчиків, якщо ввімкнено запис поїздок. У ньому є позиції GPS, тобто ваш маршрут.</li>
+</ul>
+<p>Фото дороги й кадри з камери ніколи не надсилаються. Поїздки, які відбулися до того, як ви
+ввімкнули надсилання, теж не надсилаються. Файли зберігаються в сховищі Cloudflare R2, яке
+бачить вашу IP-адресу під час надсилання. Поїздки прив'язані до випадкового ідентифікатора,
+створеного на телефоні, а не до вашого імені, облікового запису чи телефона. Ми використовуємо їх
+лише для того, щоб покращувати визначення місця й навігацію в Деї. Ми їх не продаємо й нікому не
+передаємо.</p>
 
 <h2>Голосові підказки</h2>
 <p>Підказки озвучує синтезатор мовлення, встановлений на вашому телефоні (зазвичай від Google або
@@ -78,8 +95,9 @@ GPS. Записи надсилаються як журнали датчиків 
 <h2>Видалення даних</h2>
 <p>Записані поїздки можна видалити в налаштуваннях («Видалити записи»). Усе інше, разом
 із підсумками поїздок і картами, видаляється, коли ви очищаєте дані застосунку в налаштуваннях
-Android або видаляєте застосунок. У нас немає копії ваших даних, тому видаляти щось на нашому боці
-не потрібно.</p>
+Android або видаляєте застосунок. Усе, що телефон надіслав автоматично, можна видалити кнопкою
+«Видалити надіслані поїздки» в налаштуваннях. Зробіть це до видалення застосунку: ми не знаємо,
+які поїздки ваші, тож без телефона не зможемо їх знайти. Якщо ви не вмикали автоматичне надсилання, у нас немає копії ваших даних.</p>
 
 <h2>Діти</h2>
 <p>Застосунок призначений для водіїв і не орієнтований на дітей.</p>
@@ -95,24 +113,26 @@ Android або видаляєте застосунок. У нас немає к�
 
 <section id="en" lang="en">
 <h1>Deya: privacy policy</h1>
-<p class="muted">Effective 18 October 2026</p>
+<p class="muted">Effective 24 October 2026</p>
 
 <p>Deya is a navigation app for drivers that keeps track of where you are even when GPS is jammed
 or spoofed. All of its work happens on your phone. It has no accounts, ads, analytics or crash
-reporting, and it does not send your data anywhere, to us or to anyone else.</p>
+reporting. It does not send your data anywhere unless you share a drive yourself or turn on
+automatic ride sharing (see below).</p>
 
 <h2>Location</h2>
 <p>Deya uses GPS and the phone's motion sensors (gyroscope, accelerometer) to work out where you
 are driving and to guide you along a route. During a drive this continues in the background, and
-the phone shows a notification while it does. Your location is processed only on the phone and is
-never sent.</p>
+the phone shows a notification while it does. Your location is processed on the phone. It leaves
+the phone only in the sensor log of a drive you share, or one sent automatically with your consent.</p>
 
 <h2>Camera</h2>
 <p>The camera is used to measure speed from the road when GPS can't be trusted. Camera frames are
-analysed in the phone's memory and discarded straight away. The app sends no photos or videos and
-does not store them unless you turn on drive recording yourself (see below).</p>
+analysed in the phone's memory and discarded straight away. The app does not store them unless you
+turn on drive recording yourself (see below), and it never sends photos or videos on its own, even
+with automatic ride sharing on.</p>
 
-<h2>Internet: city maps only</h2>
+<h2>Internet: city maps</h2>
 <p>The Vinnytsia map comes with the app. The internet is used only when you pick another city:
 the phone downloads its roads from OpenStreetMap through the Overpass API servers
 (overpass-api.de, overpass.kumi.systems) and its background map from Protomaps
@@ -133,10 +153,24 @@ without the internet.</p>
 <p>This data is excluded from cloud backups and from transfers to a new device.</p>
 
 <h2>When data leaves the phone</h2>
-<p>Only when you tap "Share ride" or "Share recorded drives". Android's share menu opens and
+<p>When you tap "Share ride" or "Share recorded drives". Android's share menu opens and
 you choose where the files go (for example a messenger or email). A shared drive is its summary
 and, if it was recorded, the sensor log with GPS positions. Recorded drives are their sensor logs and, if you turned it on, the camera frames for speed checks. From then on the app or person you sent
 them to handles those files.</p>
+
+<h2>Automatic ride sharing (opt-in)</h2>
+<p>This setting is off by default. The app offers it once after a drive, and you can switch it on or
+off in Settings. If you turn it on, after each later drive (once you answer the question about it)
+the phone sends the following to Deya's developer over Wi-Fi:</p>
+<ul>
+<li>the drive summary and your answer (as described above, with no coordinates);</li>
+<li>the sensor log, if drive recording is on. It includes GPS positions, so it shows your route.</li>
+</ul>
+<p>Road photos and camera frames are never sent. Drives from before you turned sharing on are not
+sent either. The files are kept in Cloudflare R2 storage, which sees your IP address while they
+upload. Drives are linked to a random ID made on the phone, not to your name, an account or the
+phone itself. We use them only to improve Deya's positioning and navigation, and we don't sell or
+pass them to anyone.</p>
 
 <h2>Voice guidance</h2>
 <p>Spoken directions use the text-to-speech engine installed on your phone (usually from Google or
@@ -146,7 +180,10 @@ under its own terms.</p>
 <h2>Deleting your data</h2>
 <p>Recorded drives can be deleted in Settings ("Delete recorded drives"). Everything else,
 including drive summaries and maps, is removed when you clear the app's data in Android settings
-or uninstall the app. We hold no copy of your data, so there is nothing to delete on our side.</p>
+or uninstall the app. Everything the phone sent automatically can be deleted with "Delete rides I
+sent" in Settings. Do this before uninstalling: we can't tell which drives are yours, so we can't
+find them without the phone. If you never turned on automatic sharing,
+we hold no copy of your data.</p>
 
 <h2>Children</h2>
 <p>The app is meant for drivers and is not directed at children.</p>
