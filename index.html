@@ -33,7 +33,8 @@
 <p>Дея — навігатор для водіїв, який визначає ваше місце на карті навіть тоді, коли сигнал GPS
 глушать або підмінюють. Уся робота відбувається на вашому телефоні. У застосунку немає облікових
 записів, реклами, аналітики чи звітів про збої. Він не надсилає ваших даних нікуди, якщо ви
-самі не поділитеся поїздкою або не ввімкнете автоматичне надсилання поїздок (див. нижче).</p>
+самі не поділитеся поїздкою, не ввімкнете автоматичне надсилання поїздок або пошук місця старту
+через Gemini (див. нижче).</p>
 
 <h2>Місцезнаходження</h2>
 <p>Дея використовує GPS і датчики руху телефона (гіроскоп, акселерометр), щоб визначати, де ви
@@ -44,8 +45,15 @@
 <h2>Камера</h2>
 <p>Камера потрібна, щоб вимірювати швидкість за дорогою, коли GPS ненадійний. Кадри з камери
 аналізуються в пам'яті телефона й одразу відкидаються. Застосунок не зберігає їх, якщо ви самі не
-ввімкнете запис поїздок (див. нижче), і ніколи сам не надсилає жодних фото чи відео, навіть коли
-ввімкнено автоматичне надсилання поїздок.</p>
+ввімкнете запис поїздок (див. нижче), і не надсилає їх нікуди, якщо ви не ввімкнули опцію
+«Шукати місце старту через Gemini» (див. нижче).</p>
+
+<h2>Пошук місця старту через Gemini (за вашою згодою)</h2>
+<p>Це налаштування за замовчуванням вимкнено; його можна ввімкнути під час першого запуску або в
+налаштуваннях. Коли на старті поїздки GPS заглушено і даних Wi-Fi чи останньої поїздки недостатньо
+(точність гірша за ±300 м), телефон надсилає 2 зменшені кадри дороги з камери (320×240), підказку
+напрямку та перелік сусідніх вулиць, перехресть і названих місць із офлайн-карти через наш проксі Cloudflare Worker до Google Gemini, щоб звузити
+початкове коло на карті (не більше 3 разів за поїздку). Наш сервер не зберігає ці кадри.</p>
 
 <h2>Інтернет: карти міст</h2>
 <p>Карта Вінниці вже є в застосунку. Інтернет потрібен лише тоді, коли ви обираєте інше місто:
@@ -80,7 +88,7 @@ GPS. Записи надсилаються як журнали датчиків 
 <li>підсумок поїздки й вашу відповідь (те саме, що описано вище, без координат);</li>
 <li>журнал датчиків, якщо ввімкнено запис поїздок. У ньому є позиції GPS, тобто ваш маршрут.</li>
 </ul>
-<p>Фото дороги й кадри з камери ніколи не надсилаються. Поїздки, які відбулися до того, як ви
+<p>Фото дороги й кадри з камери ніколи не надсилаються разом із поїздками. Поїздки, які відбулися до того, як ви
 ввімкнули надсилання, теж не надсилаються. Файли зберігаються в сховищі Cloudflare R2, яке
 бачить вашу IP-адресу під час надсилання. Поїздки прив'язані до випадкового ідентифікатора,
 створеного на телефоні, а не до вашого імені, облікового запису чи телефона. Ми використовуємо їх
@@ -118,7 +126,7 @@ Android або видаляєте застосунок. Усе, що телеф�
 <p>Deya is a navigation app for drivers that keeps track of where you are even when GPS is jammed
 or spoofed. All of its work happens on your phone. It has no accounts, ads, analytics or crash
 reporting. It does not send your data anywhere unless you share a drive yourself or turn on
-automatic ride sharing (see below).</p>
+automatic ride sharing or Gemini start search (see below).</p>
 
 <h2>Location</h2>
 <p>Deya uses GPS and the phone's motion sensors (gyroscope, accelerometer) to work out where you
@@ -129,8 +137,15 @@ the phone only in the sensor log of a drive you share, or one sent automatically
 <h2>Camera</h2>
 <p>The camera is used to measure speed from the road when GPS can't be trusted. Camera frames are
 analysed in the phone's memory and discarded straight away. The app does not store them unless you
-turn on drive recording yourself (see below), and it never sends photos or videos on its own, even
-with automatic ride sharing on.</p>
+turn on drive recording yourself (see below), and does not send them anywhere unless you turn on
+"Find starting area with Gemini" (see below).</p>
+
+<h2>Find starting area with Gemini (opt-in)</h2>
+<p>This setting is off by default and can be turned on during onboarding or in Settings. When GPS is
+jammed at the start of a drive and Wi-Fi or your last trip cannot give a position within ±300 m, the
+phone sends 2 small camera frames of the road ahead (320×240), an optional compass bearing, and nearby
+street, junction, and named-place candidates from its offline map through our Cloudflare Worker proxy to Google Gemini to narrow down the starting circle
+(at most 3 times a drive). Our server does not store these frames.</p>
 
 <h2>Internet: city maps</h2>
 <p>The Vinnytsia map comes with the app. The internet is used only when you pick another city:
@@ -166,7 +181,7 @@ the phone sends the following to Deya's developer over Wi-Fi:</p>
 <li>the drive summary and your answer (as described above, with no coordinates);</li>
 <li>the sensor log, if drive recording is on. It includes GPS positions, so it shows your route.</li>
 </ul>
-<p>Road photos and camera frames are never sent. Drives from before you turned sharing on are not
+<p>Road photos and camera frames are never sent with rides. Drives from before you turned sharing on are not
 sent either. The files are kept in Cloudflare R2 storage, which sees your IP address while they
 upload. Drives are linked to a random ID made on the phone, not to your name, an account or the
 phone itself. We use them only to improve Deya's positioning and navigation, and we don't sell or
