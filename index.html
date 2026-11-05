@@ -51,9 +51,11 @@
 <h2>Пошук місця старту через Gemini (за вашою згодою)</h2>
 <p>Це налаштування за замовчуванням вимкнено; його можна ввімкнути під час першого запуску або в
 налаштуваннях. Коли на старті поїздки GPS заглушено і даних Wi-Fi чи останньої поїздки недостатньо
-(точність гірша за ±300 м), телефон надсилає 2 зменшені кадри дороги з камери (320×240), підказку
-напрямку та перелік сусідніх вулиць, перехресть і названих місць із офлайн-карти через наш проксі Cloudflare Worker до Google Gemini, щоб звузити
-початкове коло на карті (не більше 3 разів за поїздку). Наш сервер не зберігає ці кадри.</p>
+(точність гірша за ±300 м), телефон надсилає 1 зменшений кадр дороги з камери (до 640×480) і назву
+міста через наш проксі Cloudflare Worker до Google Gemini (не більше 3 разів за поїздку). Gemini лише
+читає написи на кадрі (вивіски, назви вулиць) і повертає їх як текст; телефон сам звіряє цей текст
+із офлайн-картою. Ні ваше місцезнаходження, ні дані карти до Gemini не надсилаються. Наш сервер не
+зберігає ці кадри. Google обробляє запити до Gemini API згідно зі своїми умовами.</p>
 
 <h2>Інтернет: карти міст</h2>
 <p>Карта Вінниці вже є в застосунку. Інтернет потрібен лише тоді, коли ви обираєте інше місто:
@@ -143,9 +145,11 @@ turn on drive recording yourself (see below), and does not send them anywhere un
 <h2>Find starting area with Gemini (opt-in)</h2>
 <p>This setting is off by default and can be turned on during onboarding or in Settings. When GPS is
 jammed at the start of a drive and Wi-Fi or your last trip cannot give a position within ±300 m, the
-phone sends 2 small camera frames of the road ahead (320×240), an optional compass bearing, and nearby
-street, junction, and named-place candidates from its offline map through our Cloudflare Worker proxy to Google Gemini to narrow down the starting circle
-(at most 3 times a drive). Our server does not store these frames.</p>
+phone sends 1 small camera frame of the road ahead (up to 640×480) and the city name through our
+Cloudflare Worker proxy to Google Gemini (at most 3 times a drive). Gemini only reads the text in the
+frame (shop signs, street names) and returns it as text; the phone matches that text against its
+offline map itself. Neither your location nor map data is sent to Gemini. Our server does not store
+these frames. Google processes Gemini API requests under its own terms.</p>
 
 <h2>Internet: city maps</h2>
 <p>The Vinnytsia map comes with the app. The internet is used only when you pick another city:
