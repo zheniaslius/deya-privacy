@@ -32,7 +32,7 @@
 
 <p>Дея — навігатор для водіїв, який визначає ваше місце на карті навіть тоді, коли сигнал GPS
 глушать або підмінюють. Уся робота відбувається на вашому телефоні. У застосунку немає облікових
-записів, реклами, аналітики чи звітів про збої. Він не надсилає ваших даних нікуди, якщо ви
+записів, реклами чи аналітики. Звіти про збої надсилаються лише поки ввімкнено автоматичне надсилання поїздок. Він не надсилає ваших даних нікуди, якщо ви
 самі не поділитеся поїздкою, не залишите ввімкненим автоматичне надсилання поїздок або не ввімкнете пошук місця старту
 через Gemini (див. нижче).</p>
 
@@ -89,7 +89,9 @@ GPS. Записи надсилаються як журнали датчиків 
 поїздки (коли ви відповісте на питання про неї) телефон через Wi-Fi надсилає розробнику Деї:</p>
 <ul>
 <li>підсумок поїздки й вашу відповідь (те саме, що описано вище, без координат);</li>
-<li>журнал датчиків, якщо ввімкнено запис поїздок. У ньому є позиції GPS, тобто ваш маршрут.</li>
+<li>журнал датчиків, якщо ввімкнено запис поїздок. У ньому є позиції GPS, тобто ваш маршрут;</li>
+<li>звіт про збій, якщо застосунок аварійно закрився: час, версія застосунку, модель і версія Android
+телефона та технічний опис помилки (stack trace). У ньому немає координат, фото чи даних поїздок.</li>
 </ul>
 <p>Фото дороги й кадри з камери ніколи не надсилаються разом із поїздками. Поїздки, які відбулися до того, як ви
 ввімкнули надсилання, теж не надсилаються. Файли зберігаються в сховищі Cloudflare R2, яке
@@ -127,8 +129,8 @@ Android або видаляєте застосунок. Усе, що телеф�
 <p class="muted">Effective 24 October 2026, updated 5 November 2026</p>
 
 <p>Deya is a navigation app for drivers that keeps track of where you are even when GPS is jammed
-or spoofed. All of its work happens on your phone. It has no accounts, ads, analytics or crash
-reporting. It does not send your data anywhere unless you share a drive yourself, leave
+or spoofed. All of its work happens on your phone. It has no accounts, ads or analytics. Crash
+reports are sent only while automatic ride sharing is on. It does not send your data anywhere unless you share a drive yourself, leave
 automatic ride sharing on, or turn on Gemini start search (see below).</p>
 
 <h2>Location</h2>
@@ -185,7 +187,9 @@ drive. You can switch it on or off in Settings at any time. While it is on, afte
 the phone sends the following to Deya's developer over Wi-Fi:</p>
 <ul>
 <li>the drive summary and your answer (as described above, with no coordinates);</li>
-<li>the sensor log, if drive recording is on. It includes GPS positions, so it shows your route.</li>
+<li>the sensor log, if drive recording is on. It includes GPS positions, so it shows your route;</li>
+<li>a crash report, if the app crashes: the time, app version, phone model, Android version and the
+technical error trace (stack trace). It has no coordinates, photos or ride data.</li>
 </ul>
 <p>Road photos and camera frames are never sent with rides. Drives from before you turned sharing on are not
 sent either. The files are kept in Cloudflare R2 storage, which sees your IP address while they
