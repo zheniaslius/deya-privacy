@@ -69,7 +69,9 @@ IP-адресу та межі міста, яке ви завантажуєте, 
   <li>Налаштування та завантажені карти міст.</li>
   <li>Короткий підсумок кожної поїздки: час початку й кінця, відстань, скільки часу GPS був
       недоступний або підмінений, місто, версія застосунку, модель телефона, а також ваша відповідь
-      на питання «Як пройшла поїздка?», якщо ви відповіли. Маршрут чи координати в підсумок не входять.</li>
+      на питання «Як пройшла поїздка?», якщо ви відповіли. Також: як працювала камера, скільки часу ви
+      їхали з різною швидкістю й найвища швидкість, як трималося визначення місця без GPS (як довго, яку
+      відстань ви проїхали і наскільки позиція відрізнялася, коли GPS повернувся). Маршрут чи координати в підсумок не входять.</li>
   <li>Запис поїздок, тільки якщо ви ввімкнете його в налаштуваннях (за замовчуванням вимкнено):
       журнал датчиків разом із позиціями GPS і фото дороги приблизно кожні 10 метрів. Окреме
       налаштування додає кадри з камери для перевірки виміряної швидкості.</li>
@@ -89,7 +91,10 @@ GPS. Записи надсилаються як журнали датчиків 
 поїздки (коли ви відповісте на питання про неї) телефон через Wi-Fi надсилає розробнику Деї:</p>
 <ul>
 <li>підсумок поїздки й вашу відповідь (те саме, що описано вище, без координат);</li>
-<li>журнал датчиків, якщо ввімкнено запис поїздок. У ньому є позиції GPS, тобто ваш маршрут;</li>
+<li>журнал датчиків, якщо ввімкнено запис поїздок, а якщо вимкнено, то для поїздки, де GPS зникав або
+був підмінений щонайменше хвилину, і приблизно для однієї з чотирьох інших поїздок від 5 хвилин (обраних
+випадково, щоб перевіряти визначення місця без GPS на поїздках із добрим GPS). У ньому є позиції GPS,
+позиції за Wi-Fi та мобільною мережею й маршрут навігації, тобто ваш маршрут;</li>
 <li>звіт про збій, якщо застосунок аварійно закрився: час, версія застосунку, модель і версія Android
 телефона та технічний опис помилки (stack trace). У ньому немає координат, фото чи даних поїздок;</li>
 <li>раз на день — анонімні лічильники використання за кожен завершений день: скільки разів відкрито застосунок,
@@ -169,14 +174,17 @@ without the internet.</p>
 <ul>
   <li>Your settings and the city maps you downloaded.</li>
   <li>A short summary of each drive: start and end time, distance, how long GPS was unavailable or
-      spoofed, how the camera worked (frame counts, and why it measured no speed), the city, the app
+      spoofed, how the camera worked (frame counts, and why it measured no speed), time spent in each
+      speed range and the top speed, how tracking held up while GPS was out (how long, how far you drove,
+      and how far off the position was when GPS came back), the city, the app
       version, the phone model, and your answer to "How did the ride go?" if you gave one. The summary
       does not include your route or coordinates.</li>
   <li>Drive recordings, if you turn them on in Settings (off by default): a sensor log including
       GPS positions. A separate setting adds camera frames for checking the measured speed.</li>
   <li>While automatic ride sharing is on, a sensor log of each drive, kept only for a drive on which
-      GPS was lost or spoofed for at least a minute (to be sent, then deleted from the phone). For other
-      drives it is deleted when the drive ends.</li>
+      GPS was lost or spoofed for at least a minute, and for about one in four other drives of 5 minutes
+      or more, picked at random (so tracking without GPS can be tested against good GPS). It is kept to be
+      sent, then deleted from the phone. For other drives it is deleted when the drive ends.</li>
 </ul>
 <p>This data is excluded from cloud backups and from transfers to a new device.</p>
 
@@ -194,7 +202,8 @@ the phone sends the following to Deya's developer over Wi-Fi:</p>
 <ul>
 <li>the drive summary and your answer (as described above, with no coordinates);</li>
 <li>the sensor log, if drive recording is on, or, with it off, for a drive on which GPS was lost or
-spoofed for at least a minute. It includes GPS positions, so it shows your route;</li>
+spoofed for at least a minute and for about one in four other drives of 5 minutes or more. It includes
+GPS positions, Wi-Fi/mobile network positions and the route you navigated, so it shows your route;</li>
 <li>a crash report, if the app crashes: the time, app version, phone model, Android version and the
 technical error trace (stack trace). It has no coordinates, photos or ride data;</li>
 <li>once a day, anonymous usage counts for each finished day: how many times the app was opened, how many
