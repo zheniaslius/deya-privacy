@@ -166,11 +166,14 @@ without the internet.</p>
 <ul>
   <li>Your settings and the city maps you downloaded.</li>
   <li>A short summary of each drive: start and end time, distance, how long GPS was unavailable or
-      spoofed, the city, the app version, the phone model, and your answer to "How did the ride go?" if
-      you gave one. The summary does not include your route or coordinates.</li>
-  <li>Drive recordings, only if you turn them on in Settings (off by default): a sensor log
-      including GPS positions, and a photo of the road about every 10 metres. A separate setting
-      adds camera frames for checking the measured speed.</li>
+      spoofed, how the camera worked (frame counts, and why it measured no speed), the city, the app
+      version, the phone model, and your answer to "How did the ride go?" if you gave one. The summary
+      does not include your route or coordinates.</li>
+  <li>Drive recordings, if you turn them on in Settings (off by default): a sensor log including
+      GPS positions. A separate setting adds camera frames for checking the measured speed.</li>
+  <li>While automatic ride sharing is on, a sensor log of each drive, kept only for a drive on which
+      GPS was lost or spoofed for at least a minute (to be sent, then deleted from the phone). For other
+      drives it is deleted when the drive ends.</li>
 </ul>
 <p>This data is excluded from cloud backups and from transfers to a new device.</p>
 
@@ -187,7 +190,8 @@ drive. You can switch it on or off in Settings at any time. While it is on, afte
 the phone sends the following to Deya's developer over Wi-Fi:</p>
 <ul>
 <li>the drive summary and your answer (as described above, with no coordinates);</li>
-<li>the sensor log, if drive recording is on. It includes GPS positions, so it shows your route;</li>
+<li>the sensor log, if drive recording is on, or, with it off, for a drive on which GPS was lost or
+spoofed for at least a minute. It includes GPS positions, so it shows your route;</li>
 <li>a crash report, if the app crashes: the time, app version, phone model, Android version and the
 technical error trace (stack trace). It has no coordinates, photos or ride data.</li>
 </ul>
