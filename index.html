@@ -28,12 +28,12 @@
 
 <section id="uk" lang="uk">
 <h1>Дея: політика конфіденційності</h1>
-<p class="muted">Чинна з 24 жовтня 2026 року, оновлено 12 листопада 2026 року</p>
+<p class="muted">Чинна з 24 жовтня 2026 року, оновлено 14 листопада 2026 року</p>
 
 <p>Дея — навігатор для водіїв, який визначає ваше місце на карті навіть тоді, коли сигнал GPS
 глушать або підмінюють. Уся робота відбувається на вашому телефоні. У застосунку немає облікових
 записів чи реклами. Звіти про збої та кілька анонімних щоденних лічильників використання надсилаються лише поки ввімкнено автоматичне надсилання поїздок. Він не надсилає ваших даних нікуди, якщо ви
-самі не поділитеся поїздкою, не залишите ввімкненим автоматичне надсилання поїздок або не ввімкнете пошук місця старту
+самі не поділитеся поїздкою, не залишите ввімкненим автоматичне надсилання поїздок або не ввімкнете пошук місця
 через Gemini (див. нижче).</p>
 
 <h2>Місцезнаходження</h2>
@@ -46,14 +46,15 @@
 <p>Камера потрібна, щоб вимірювати швидкість за дорогою, коли GPS ненадійний. Кадри з камери
 аналізуються в пам'яті телефона й одразу відкидаються. Застосунок не зберігає їх, якщо ви самі не
 ввімкнете запис поїздок (див. нижче), і не надсилає їх нікуди, якщо ви не ввімкнули опцію
-«Шукати місце старту через Gemini» (див. нижче).</p>
+«Шукати місце через Gemini» (див. нижче).</p>
 
-<h2>Пошук місця старту через Gemini (за вашою згодою)</h2>
+<h2>Пошук місця через Gemini (за вашою згодою)</h2>
 <p>Це налаштування за замовчуванням вимкнено; його можна ввімкнути під час першого запуску або в
-налаштуваннях. Коли на старті поїздки GPS заглушено і даних Wi-Fi чи останньої поїздки недостатньо
-(точність гірша за ±300 м), телефон надсилає 1 зменшений кадр дороги з камери (до 640×480) і назву
+налаштуваннях, а коли пошук міг би допомогти, Дея один раз запитає «Знайти вас через Gemini?». Пошук
+працює лише з увімкненою камерою. Коли GPS заглушено чи втрачено (на старті або в дорозі) і позиція
+відома гірше ніж на ±400 м, телефон надсилає 2 зменшені кадри дороги з камери (до 640×480) і назву
 міста через наш проксі Cloudflare Worker до Google Gemini (не більше 3 разів за поїздку). Gemini лише
-читає написи на кадрі (вивіски, назви вулиць) і повертає їх як текст; телефон сам звіряє цей текст
+читає написи на кадрах (вивіски, назви вулиць) і повертає їх як текст; телефон сам звіряє цей текст
 із офлайн-картою. Ні ваше місцезнаходження, ні дані карти до Gemini не надсилаються. Наш сервер не
 зберігає ці кадри. Google обробляє запити до Gemini API згідно зі своїми умовами.</p>
 
@@ -71,7 +72,7 @@ IP-адресу та межі міста, яке ви завантажуєте, 
       недоступний або підмінений, місто, версія застосунку, модель телефона, а також ваша відповідь
       на питання «Як пройшла поїздка?», якщо ви відповіли. Також: як працювала камера, скільки часу ви
       їхали з різною швидкістю й найвища швидкість, як трималося визначення місця без GPS (як довго, яку
-      відстань ви проїхали і наскільки позиція відрізнялася, коли GPS повернувся). Маршрут чи координати в підсумок не входять.</li>
+      відстань ви проїхали і наскільки позиція відрізнялася, коли GPS повернувся), як швидко телефон віддавав дані датчиків руху і як працювала оцінка швидкості за датчиками руху. Маршрут чи координати в підсумок не входять.</li>
   <li>Запис поїздок, тільки якщо ви ввімкнете його в налаштуваннях (за замовчуванням вимкнено):
       журнал датчиків разом із позиціями GPS і фото дороги приблизно кожні 10 метрів. Окреме
       налаштування додає кадри з камери для перевірки виміряної швидкості.</li>
@@ -134,12 +135,12 @@ Android або видаляєте застосунок. Усе, що телеф�
 
 <section id="en" lang="en">
 <h1>Deya: privacy policy</h1>
-<p class="muted">Effective 24 October 2026, updated 12 November 2026</p>
+<p class="muted">Effective 24 October 2026, updated 14 November 2026</p>
 
 <p>Deya is a navigation app for drivers that keeps track of where you are even when GPS is jammed
 or spoofed. All of its work happens on your phone. It has no accounts or ads. Crash
 reports and a few anonymous daily usage counts are sent only while automatic ride sharing is on. It does not send your data anywhere unless you share a drive yourself, leave
-automatic ride sharing on, or turn on Gemini start search (see below).</p>
+automatic ride sharing on, or turn on Gemini location search (see below).</p>
 
 <h2>Location</h2>
 <p>Deya uses GPS and the phone's motion sensors (gyroscope, accelerometer) to work out where you
@@ -151,14 +152,15 @@ the phone only in the sensor log of a drive you share, or one sent automatically
 <p>The camera is used to measure speed from the road when GPS can't be trusted. Camera frames are
 analysed in the phone's memory and discarded straight away. The app does not store them unless you
 turn on drive recording yourself (see below), and does not send them anywhere unless you turn on
-"Find starting area with Gemini" (see below).</p>
+"Find location with Gemini" (see below).</p>
 
-<h2>Find starting area with Gemini (opt-in)</h2>
-<p>This setting is off by default and can be turned on during onboarding or in Settings. When GPS is
-jammed at the start of a drive and Wi-Fi or your last trip cannot give a position within ±300 m, the
-phone sends 1 small camera frame of the road ahead (up to 640×480) and the city name through our
-Cloudflare Worker proxy to Google Gemini (at most 3 times a drive). Gemini only reads the text in the
-frame (shop signs, street names) and returns it as text; the phone matches that text against its
+<h2>Find location with Gemini (opt-in)</h2>
+<p>This setting is off by default and can be turned on during onboarding or in Settings; when the
+search could help, Deya also asks once, "Find you with Gemini?". It only works with the camera on.
+When GPS is jammed or lost (at the start or mid-drive) and the position is known no better than
+±400 m, the phone sends 2 small camera frames of the road ahead (up to 640×480) and the city name
+through our Cloudflare Worker proxy to Google Gemini (at most 3 times a drive). Gemini only reads the
+text in the frames (shop signs, street names) and returns it as text; the phone matches that text against its
 offline map itself. Neither your location nor map data is sent to Gemini. Our server does not store
 these frames. Google processes Gemini API requests under its own terms.</p>
 
@@ -176,7 +178,8 @@ without the internet.</p>
   <li>A short summary of each drive: start and end time, distance, how long GPS was unavailable or
       spoofed, how the camera worked (frame counts, and why it measured no speed), time spent in each
       speed range and the top speed, how tracking held up while GPS was out (how long, how far you drove,
-      and how far off the position was when GPS came back), the city, the app
+      and how far off the position was when GPS came back), how fast the phone delivered its motion
+      sensor data and how the motion-sensor speed estimate did, the city, the app
       version, the phone model, and your answer to "How did the ride go?" if you gave one. The summary
       does not include your route or coordinates.</li>
   <li>Drive recordings, if you turn them on in Settings (off by default): a sensor log including
