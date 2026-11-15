@@ -33,7 +33,7 @@
 <p>Дея — навігатор для водіїв, який визначає ваше місце на карті навіть тоді, коли сигнал GPS
 глушать або підмінюють. Уся робота відбувається на вашому телефоні. У застосунку немає облікових
 записів чи реклами. Звіти про збої та кілька анонімних щоденних лічильників використання надсилаються лише поки ввімкнено автоматичне надсилання поїздок. Він не надсилає ваших даних нікуди, якщо ви
-самі не поділитеся поїздкою, не залишите ввімкненим автоматичне надсилання поїздок або не ввімкнете пошук місця
+самі не поділитеся поїздкою, не залишите ввімкненим автоматичне надсилання поїздок або не погодитеся на пошук місця
 через Gemini (див. нижче).</p>
 
 <h2>Місцезнаходження</h2>
@@ -45,15 +45,16 @@
 <h2>Камера</h2>
 <p>Камера потрібна, щоб вимірювати швидкість за дорогою, коли GPS ненадійний. Кадри з камери
 аналізуються в пам'яті телефона й одразу відкидаються. Застосунок не зберігає їх, якщо ви самі не
-ввімкнете запис поїздок (див. нижче), і не надсилає їх нікуди, якщо ви не ввімкнули опцію
-«Шукати місце через Gemini» (див. нижче).</p>
+ввімкнете запис поїздок (див. нижче), і не надсилає їх нікуди, крім пошуку місця через Gemini, на який ви погодилися
+(див. нижче).</p>
 
 <h2>Пошук місця через Gemini (за вашою згодою)</h2>
-<p>Це налаштування за замовчуванням вимкнено; його можна ввімкнути під час першого запуску або в
-налаштуваннях, а коли пошук міг би допомогти, Дея один раз запитає «Знайти вас через Gemini?». Пошук
-працює лише з увімкненою камерою. Коли GPS заглушено чи втрачено (на старті або в дорозі) і позиція
-відома гірше ніж на ±400 м, телефон надсилає 2 зменшені кадри дороги з камери (до 640×480) і назву
-міста через наш проксі Cloudflare Worker до Google Gemini (не більше 3 разів за поїздку). Gemini лише
+<p>Налаштування «Шукати місце через Gemini» за замовчуванням увімкнено, але нічого не надсилається,
+доки ви не погодитеся. Першого разу, коли пошук міг би допомогти, Дея питає «Знайти вас через Gemini?»;
+відповідь «Ні» вимикає налаштування. Змінити рішення можна будь-коли в налаштуваннях. Пошук працює
+лише з увімкненою камерою. Коли GPS заглушено чи втрачено (на старті або в дорозі) і позиція відома
+гірше ніж на ±400 м, телефон надсилає 2 зменшені кадри дороги з камери (до 640×480) і назву міста
+через наш проксі Cloudflare Worker до Google Gemini (не більше 3 разів за поїздку). Gemini лише
 читає написи на кадрах (вивіски, назви вулиць) і повертає їх як текст; телефон сам звіряє цей текст
 із офлайн-картою. Ні ваше місцезнаходження, ні дані карти до Gemini не надсилаються. Наш сервер не
 зберігає ці кадри. Google обробляє запити до Gemini API згідно зі своїми умовами.</p>
@@ -140,7 +141,7 @@ Android або видаляєте застосунок. Усе, що телеф�
 <p>Deya is a navigation app for drivers that keeps track of where you are even when GPS is jammed
 or spoofed. All of its work happens on your phone. It has no accounts or ads. Crash
 reports and a few anonymous daily usage counts are sent only while automatic ride sharing is on. It does not send your data anywhere unless you share a drive yourself, leave
-automatic ride sharing on, or turn on Gemini location search (see below).</p>
+automatic ride sharing on, or agree to the Gemini location search (see below).</p>
 
 <h2>Location</h2>
 <p>Deya uses GPS and the phone's motion sensors (gyroscope, accelerometer) to work out where you
@@ -151,12 +152,13 @@ the phone only in the sensor log of a drive you share, or one sent automatically
 <h2>Camera</h2>
 <p>The camera is used to measure speed from the road when GPS can't be trusted. Camera frames are
 analysed in the phone's memory and discarded straight away. The app does not store them unless you
-turn on drive recording yourself (see below), and does not send them anywhere unless you turn on
-"Find location with Gemini" (see below).</p>
+turn on drive recording yourself (see below), and does not send them anywhere except for the Gemini location
+search you agreed to (see below).</p>
 
-<h2>Find location with Gemini (opt-in)</h2>
-<p>This setting is off by default and can be turned on during onboarding or in Settings; when the
-search could help, Deya also asks once, "Find you with Gemini?". It only works with the camera on.
+<h2>Find location with Gemini (with your consent)</h2>
+<p>The "Find location with Gemini" setting is on by default, but nothing is sent until you agree.
+The first time the search could help, Deya asks "Find you with Gemini?"; answering "No" turns the
+setting off. You can change your mind at any time in Settings. It only works with the camera on.
 When GPS is jammed or lost (at the start or mid-drive) and the position is known no better than
 ±400 m, the phone sends 2 small camera frames of the road ahead (up to 640×480) and the city name
 through our Cloudflare Worker proxy to Google Gemini (at most 3 times a drive). Gemini only reads the
