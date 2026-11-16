@@ -65,6 +65,10 @@
 overpass.kumi.systems) і фон карти з Protomaps (build.protomaps.com). Ці сервери бачать вашу
 IP-адресу та межі міста, яке ви завантажуєте, але не ваше місцезнаходження. На них поширюються
 їхні власні правила. Визначення місця й навігація працюють без інтернету.</p>
+<p>Якщо Дею встановлено не з Google Play, не частіше ніж раз на день під час відкриття застосунку
+телефон дізнається в GitHub (api.github.com) номер найновішої версії, щоб запропонувати оновлення.
+Нічого, крім самого запиту, не надсилається; GitHub бачить вашу IP-адресу, і на нього поширюються
+його власні правила.</p>
 
 <h2>Що зберігається на телефоні</h2>
 <ul>
@@ -73,7 +77,7 @@ IP-адресу та межі міста, яке ви завантажуєте, 
       недоступний або підмінений, місто, версія застосунку, модель телефона, а також ваша відповідь
       на питання «Як пройшла поїздка?», якщо ви відповіли. Також: як працювала камера, скільки часу ви
       їхали з різною швидкістю й найвища швидкість, як трималося визначення місця без GPS (як довго, яку
-      відстань ви проїхали і наскільки позиція відрізнялася, коли GPS повернувся), як швидко телефон віддавав дані датчиків руху і як працювала оцінка швидкості за датчиками руху. Маршрут чи координати в підсумок не входять.</li>
+      відстань ви проїхали і наскільки позиція відрізнялася, коли GPS повернувся), як швидко телефон віддавав дані датчиків руху і як працювала оцінка швидкості за датчиками руху, скільки позицій GPS дав телефон і їхню середню точність, чи була вимкнена геолокація. Маршрут чи координати в підсумок не входять.</li>
   <li>Запис поїздок, тільки якщо ви ввімкнете його в налаштуваннях (за замовчуванням вимкнено):
       журнал датчиків разом із позиціями GPS і фото дороги приблизно кожні 10 метрів. Окреме
       налаштування додає кадри з камери для перевірки виміряної швидкості.</li>
@@ -173,6 +177,9 @@ the phone downloads its roads from OpenStreetMap through the Overpass API server
 (build.protomaps.com). These servers see your IP address and the boundaries of the city you are
 downloading, not your location, and their own policies apply. Positioning and navigation work
 without the internet.</p>
+<p>If Deya was not installed from Google Play, at most once a day when the app opens the phone asks
+GitHub (api.github.com) for the number of the latest version, to offer an update. Nothing is sent
+beyond the request itself; GitHub sees your IP address and its own policies apply.</p>
 
 <h2>What is stored on the phone</h2>
 <ul>
@@ -181,7 +188,8 @@ without the internet.</p>
       spoofed, how the camera worked (frame counts, and why it measured no speed), time spent in each
       speed range and the top speed, how tracking held up while GPS was out (how long, how far you drove,
       and how far off the position was when GPS came back), how fast the phone delivered its motion
-      sensor data and how the motion-sensor speed estimate did, the city, the app
+      sensor data and how the motion-sensor speed estimate did, how many GPS fixes the phone gave and
+      their median accuracy, whether Location was switched off, the city, the app
       version, the phone model, and your answer to "How did the ride go?" if you gave one. The summary
       does not include your route or coordinates.</li>
   <li>Drive recordings, if you turn them on in Settings (off by default): a sensor log including
